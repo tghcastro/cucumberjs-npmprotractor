@@ -18,13 +18,6 @@ var {
 const globalTimeout = 8000;
 const browserTimeout = 3000;
 
-// {string}, {int} or {float} -> any other use Regex
-// Given('I go to {string}', { timeOut: globalTimeout }, function(url, callback){
-//     browser.get(url);
-//     browser.wait(ExpectedConditions.urlIs(url), browserTimeout).then(() => { 
-//         callback();
-//     });
-// });
 
 // Always use 'function' to keet the world
 Given("I go to {string}", {
@@ -35,9 +28,7 @@ Given("I go to {string}", {
     await browser.wait(ExpectedConditions.urlIs(url), browserTimeout);
 });
 
-When("I enter {string} for field {string}", {
-    timeOut: globalTimeout
-}, function (fieldData, fieldName, callback) {
+When("I enter {string} for field {string}", function (fieldData, fieldName, callback) {
     console.log("Searching for: " + fieldName);
     var inputField = element(by.model(fieldName))
     browser.wait(ExpectedConditions.visibilityOf(inputField), browserTimeout).then(() => {
@@ -47,9 +38,7 @@ When("I enter {string} for field {string}", {
     })
 });
 
-When("I click a button", {
-    timeOut: globalTimeout
-}, function (callback) {
+When("I click a button", function (callback) {
     console.log("Searching for: .btn");
     var button = $(".btn");
     browser.wait(ExpectedConditions.visibilityOf(button), browserTimeout).then(() => {
@@ -60,9 +49,7 @@ When("I click a button", {
 });
 
 
-Then("field {string} contains {string}", {
-    timeOut: globalTimeout
-}, function (longField, logContent, callback) {
+Then("field {string} contains {string}", function (longField, logContent, callback) {
     var field =  $(longField);
     browser.wait(ExpectedConditions.visibilityOf(field), browserTimeout).then( async () => {
         var fieldText = await field.getText();
