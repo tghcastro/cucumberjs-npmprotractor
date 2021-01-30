@@ -20,11 +20,11 @@ exports.config = {
     ignoreUcaughtExceptions: "true",
 
     specs: [
-        "features/*.feature"
+        "src/features/*.feature"
     ],
 
     cucumberOpts: {
-        require: ["steps/*.js", "support/*.js"],
+        require: ["src/steps/*.js", "src/support/*.js"],
         format: `json:${config.get("report.dir") + config.get("report.file")}`,
         strict: true
     }

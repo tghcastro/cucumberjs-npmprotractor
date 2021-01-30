@@ -40,7 +40,7 @@ When('he inform its data', async function () {
 
     var inputEmail = element(by.name("email"));
     await browser.wait(ExpectedConditions.visibilityOf(inputEmail), timeout);
-    inputName.clear();
+    inputEmail.clear();
     inputEmail.sendKeys(this.email);
 });
 

@@ -18,9 +18,9 @@ var htmlReportOptions = {
     }
 };
 
-async function runProtractor() {
+async function runProtractorAndGenerateReport() {
     await shell.exec("npm run protractor"); //Run as a child process
     await reporter.generate(htmlReportOptions); //Generates the report after the execution 
 };
 
-runProtractor();
+runProtractorAndGenerateReport();
