@@ -1,25 +1,15 @@
-const { assert } = require('chai');
-var config = require('config');
-var chai = require('chai').use(require('chai-as-promised'));
-var expect = chai.expect;
-
-var timeout = config.get("waitTimeout");
-
 var {
     Given,
     When,
     Then
 } = require('cucumber');
 
-var {
-    browser,
-    $,
-    element,
-    ExpectedConditions
-} = require('protractor');
+var ProfilePage = require("../page-objects/profile-page");
+
+var profilePage = new ProfilePage();
 
 Given('an user that already informed his profile', function () {
-    // Write code here that turns the phrase above into concrete actions
+    return 'pending';
 });
 
 Given('the user', function (dataTable) {
@@ -33,19 +23,10 @@ Given('the user', function (dataTable) {
 });
 
 When('he inform its data', async function () {
-    var inputName = element(by.css("#form-views > div:nth-child(1) > input"));
-    await browser.wait(ExpectedConditions.visibilityOf(inputName), timeout);
-    inputName.clear();
-    inputName.sendKeys(this.name);
-
-    var inputEmail = element(by.name("email"));
-    await browser.wait(ExpectedConditions.visibilityOf(inputEmail), timeout);
-    inputEmail.clear();
-    inputEmail.sendKeys(this.email);
+    await profilePage.setName(this.name);
+    await profilePage.setEmail(this.email);
 });
 
 When('he confirms his data', async function () {
-    var nextSectionButton = element(by.xpath("//*[@id='form-views']/div[3]/div/a"));
-    await browser.wait(ExpectedConditions.elementToBeClickable(nextSectionButton), timeout);
-    nextSectionButton.click();
+    await profilePage.clickNextSection();
 });

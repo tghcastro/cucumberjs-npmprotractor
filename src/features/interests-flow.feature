@@ -8,12 +8,12 @@ Feature: Dummy Test with Cucumber
         And he confirms his data
         Then he should be asked for his interests
 
-    # Scenario Outline: User can inform his interests
+    # Scenario Outline: User can inform his interests (<preference>)
     #     Given an user that already informed his profile
     #     When he that his preference is "<preference>"
     #     Then he should be able to start the payment
 
-    #     Example:
+    #     Examples:
     #         | preference  |
     #         | I like XBOX |
     #         | I like PS4  |
