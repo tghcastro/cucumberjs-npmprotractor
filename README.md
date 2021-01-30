@@ -14,9 +14,11 @@ I really don't recommend it for a person that is starting to learn about test au
 
 ### Pre-requirements
 
-1- Node.js
+1. Node.js
+2. Selenium (Webdriver-manager)
+3. Visual Studio Code (optional)
 
-2- Selenium (Webdriver-manager)
+#### Installing pre-quirements
 
 ```shell
 npm install webdriver-manager
@@ -30,3 +32,5 @@ webdriver-manager update
 webdriver-manager start
 npm run protractor
 ```
+
+> After running the tests the report files will be available in the report folder (ignored in .gitingore).

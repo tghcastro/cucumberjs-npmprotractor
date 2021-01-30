@@ -1,3 +1,5 @@
+var config = require("config")
+
 exports.config={
 
     /**
@@ -23,7 +25,7 @@ exports.config={
 
     cucumberOpts: {
         require: "features/steps/*.js",
-        format: "json:report/results.json",
+        format: `json:${config.get("report.dir") + config.get("report.results")}`,
         strict: true
     }
 }

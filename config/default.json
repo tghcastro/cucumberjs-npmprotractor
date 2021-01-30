@@ -1,3 +1,6 @@
 {
-    
+    "report": {
+        "dir": "report/",
+        "results": "results.json"
+    } 
 }

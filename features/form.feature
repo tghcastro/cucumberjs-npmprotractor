@@ -1,5 +1,5 @@
 @ourAngularForm
-Feature: FOrm Validation
+Feature: Form Validation
 
     Scenario: Entire Form
         Given I go to "http://www.way2automation.com/angularjs-protractor/multiform/#/form/profile"

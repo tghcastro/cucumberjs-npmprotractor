@@ -14,7 +14,9 @@
     "chai-as-promised": "^7.1.1",
     "config": "^3.3.3",
     "cucumber": "^5.0.2",
+    "cucumber-html-reporter": "^5.3.0",
     "protractor": "^7.0.0",
-    "protractor-cucumber-framework": "^6.2.1"
+    "protractor-cucumber-framework": "^6.2.1",
+    "shelljs": "^0.8.4"
   }
 }
