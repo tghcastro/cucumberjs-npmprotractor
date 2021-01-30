@@ -8,8 +8,12 @@ var ProfilePage = require("../page-objects/profile-page");
 
 var profilePage = new ProfilePage();
 
-Given('an user that already informed his profile', function () {
-    return 'pending';
+Given('an user that already informed his profile', async function () {
+    this.name = "Some user";
+    this.email = "someemail@hmail.com";
+    await profilePage.setName(this.name);
+    await profilePage.setEmail(this.email);
+    await profilePage.clickNextSection();
 });
 
 Given('the user', function (dataTable) {

@@ -1,5 +1,3 @@
-const { assert } = require('chai');
-var config = require('config');
 var chai = require('chai').use(require('chai-as-promised'));
 var expect = chai.expect;
 
@@ -9,28 +7,22 @@ var {
     Then
 } = require('cucumber');
 
-var {
-    browser,
-    $,
-    element,
-    ExpectedConditions
-} = require('protractor');
+var ProfilePage = require("../page-objects/profile-page");
+var InterestsPage = require("../page-objects/interests-page");
 
-var timeout = config.get("waitTimeout");
+var profilePage = new ProfilePage();
+var interestsPage = new InterestsPage();
 
-When('he that his preference is {string}', function (string) {
-    // Write code here that turns the phrase above into concrete actions
-    return 'pending';
+Given('his preference is {string}', function (interest) {
+    interestsPage.chooseInterest(interest);
 });
 
-When('he that his preference is {string}', function (string) {
-    // Write code here that turns the phrase above into concrete actions
-    return 'pending';
+When('he confirms his preference', function () {
+    interestsPage.clickNextSection();
 });
 
 Then('he should be asked for his interests', async function () {
-    var interestsQuestion = element(by.xpath("//*[@id='form-views']/label"));
-    await browser.wait(ExpectedConditions.presenceOf(interestsQuestion), timeout);
+    var question = await interestsPage.interestQuestion();
     var expectedMessage = "What's Your Console of Choice?";
-    expect(await interestsQuestion.getText()).to.equal(expectedMessage);
+    expect(question).to.equal(expectedMessage);
 });
