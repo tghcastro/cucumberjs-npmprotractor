@@ -5,7 +5,7 @@ var config = require("config");
 
 var htmlReportOptions = {
     theme: "bootstrap",
-    jsonFile: config.get("report.dir") + config.get("report.results"),
+    jsonFile: config.get("report.dir") + config.get("report.file"),
     output: `${config.get("report.dir")}cucumber_report.html`,
     reportSuiteAsScenarios: true,
     launchReport: true,

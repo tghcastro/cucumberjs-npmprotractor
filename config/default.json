@@ -1,6 +1,10 @@
 {
+    "startPage": "http://www.way2automation.com/angularjs-protractor/multiform/#/form/profile",
+    "cucumberDefaultTimeout": 10000,
+    "waitTimeout": 5000,
+    
     "report": {
         "dir": "report/",
-        "results": "results.json"
+        "file": "results.json"
     } 
 }

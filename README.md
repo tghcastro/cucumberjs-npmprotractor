@@ -31,6 +31,7 @@ webdriver-manager update
 ```shell
 webdriver-manager start
 npm run protractor
+node index.js
 ```
 
 > After running the tests the report files will be available in the report folder (ignored in .gitingore).

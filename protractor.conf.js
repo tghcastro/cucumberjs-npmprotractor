@@ -1,6 +1,6 @@
 var config = require("config")
 
-exports.config={
+exports.config = {
 
     /**
      * webdriver-manager address
@@ -24,8 +24,8 @@ exports.config={
     ],
 
     cucumberOpts: {
-        require: "features/steps/*.js",
-        format: `json:${config.get("report.dir") + config.get("report.results")}`,
+        require: ["steps/*.js", "support/*.js"],
+        format: `json:${config.get("report.dir") + config.get("report.file")}`,
         strict: true
     }
 }
